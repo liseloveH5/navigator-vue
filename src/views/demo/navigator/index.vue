@@ -1,4 +1,4 @@
-<style scoped>
+<style >
   .layout{
     border: 1px solid #d7dde4;
     background: #f5f7f9;
@@ -51,6 +51,17 @@
   .ivu-col{
     transition: width .2s ease-in-out;
   }
+
+  .ivu-menu-dark.ivu-menu-vertical  .ivu-menu-submenu-title {
+    height:50px;
+  }
+  .ivu-menu-submenu-title .layout-text{
+    padding-left:20px;
+  }
+  .ivu-menu-vertical .ivu-menu-submenu-title-icon{
+    float:left;
+  }
+
 </style>
 <template>
   <div class="layout" style="height:100vh" :class="{'layout-hide-text': spanLeft < 5}">
@@ -81,7 +92,6 @@
           </Submenu>
           <Submenu name="2">
             <template slot="title">
-              <Icon type="ios-keypad" :size="iconSize"></Icon>
               <span class="layout-text">导航二</span>
             </template>
             <Menu-item name="2-1">
