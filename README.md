@@ -1,4 +1,4 @@
-# mavigator
+# navigator
 
 > A Vue.js project
 
