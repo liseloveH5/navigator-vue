@@ -58,8 +58,23 @@
   .ivu-menu-submenu-title .layout-text{
     padding-left:20px;
   }
-  .ivu-menu-vertical .ivu-menu-submenu-title-icon{
+  .ivu-menu-vertical .ivu-menu-submenu-title-icon:before{
+    display: none;
+  }
+  .ivu-menu-opened .ivu-menu-submenu-title-icon {
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  .ivu-menu-submenu-title .ivu-icon{
     float:left;
+    margin-left:20px;
+    display: inline-block;
+    width:0;
+    height:0;
+    border-top:5px solid transparent;
+    border-bottom:5px solid transparent;
+    border-left:5px solid #fff;
+    border-right:5px solid transparent;
   }
 
 </style>
