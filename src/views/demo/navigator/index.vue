@@ -8,11 +8,11 @@
               <Icon type="navicon" size="32"></Icon>
             </i-button>
           </div>
-          <Submenu name="idx" v-for="(item,idx) in navData">
+          <Submenu name="idx" v-for="(item,idx) in navData" :key="idx">
             <template slot="title" >
               <span class="layout-text"> {{item.label}}</span>
             </template>
-            <Menu-item :name="idx + '-'+ index" v-for="(childItem,index) in item.children">
+            <Menu-item :name="idx + '-'+ index" v-for="(childItem,index) in item.children" :key="index">
               <Icon type="ios-navigate" :size="iconSize"></Icon>
               <span class="layout-text"> {{childItem.label}}</span>
               <div class="nav-child" :class="{'min-width': spanLeft < 4}" v-if="childItem.children">
