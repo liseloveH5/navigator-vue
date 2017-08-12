@@ -1,29 +1,40 @@
+import navArray from './data.js';
+
 const index = {
   name: 'demo-base',
 
   data () {
     return {
-      spanLeft: 5,
-      spanRight: 19,
-      hide:false,
+      spanLeft: 4,
+      spanRight: 20,
+      navData:'',
     }
   },
   computed: {
     iconSize () {
-      return this.spanLeft === 5 ? 14 : 24;
+      return this.spanLeft === 4 ? 14 : 24;
     }
   },
   methods: {
     toggleClick () {
-      if (this.spanLeft === 5) {
-        this.spanLeft = 2;
-        this.spanRight = 22;
+      if (this.spanLeft === 4) {
+        this.spanLeft = 1;
+        this.spanRight = 23;
       } else {
-        this.spanLeft = 5;
-        this.spanRight = 19;
+        this.spanLeft = 4;
+        this.spanRight = 20;
       }
     },
-  }
+  },
+
+  // 挂载之后 相当于原来的ready
+  mounted: function () {
+    this.$nextTick(function () {
+      // 保证 this.$el 已经插入文档
+      this.navData=navArray.navData;
+
+    })
+  },
 
 };
 
