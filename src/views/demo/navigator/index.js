@@ -4,7 +4,8 @@ const index = {
   data () {
     return {
       spanLeft: 5,
-      spanRight: 19
+      spanRight: 19,
+      hide:false,
     }
   },
   computed: {
@@ -21,7 +22,7 @@ const index = {
         this.spanLeft = 5;
         this.spanRight = 19;
       }
-    }
+    },
   }
 
 };

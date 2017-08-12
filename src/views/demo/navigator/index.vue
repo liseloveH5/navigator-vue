@@ -2,28 +2,49 @@
   <div class="layout" style="height:100vh" :class="{'layout-hide-text': spanLeft < 5}">
     <Row type="flex" style="height:100%">
       <i-col :span="spanLeft" class="layout-menu-left">
-        <Menu active-name="1-2" theme="dark" width="auto" :open-names="['1']">
+        <Menu active-name="1-2" theme="dark" width="auto" :open-names="['1']" >
           <div class="layout-logo-left">
             <i-button type="text" @click="toggleClick">
               <Icon type="navicon" size="32"></Icon>
             </i-button>
           </div>
-          <Submenu name="1">
-            <template slot="title">
+          <Submenu name="1" >
+            <template slot="title" >
               <span class="layout-text"> 导航一</span>
             </template>
-            <Menu-item name="1-1">
+            <Menu-item name="1-1" >
               <Icon type="ios-navigate" :size="iconSize"></Icon>
               <span class="layout-text"> 选项 1</span>
             </Menu-item>
+            <div class="nav-child" :class="{'min-width': spanLeft < 5}">
+              <ul>
+                <li>子栏目1</li>
+                <li>子栏目2</li>
+                <li>子栏目3</li>
+              </ul>
+            </div>
             <Menu-item name="1-2">
               <Icon type="ios-navigate" :size="iconSize"></Icon>
               <span class="layout-text"> 选项 2</span>
             </Menu-item>
+            <div class="nav-child" :class="{'min-width': spanLeft < 5}">
+              <ul>
+                <li>2子栏目1</li>
+                <li>22子栏目2</li>
+                <li>2子栏目3</li>
+              </ul>
+            </div>
             <Menu-item name="1-3">
               <Icon type="ios-navigate" :size="iconSize"></Icon>
               <span class="layout-text"> 选项 3</span>
             </Menu-item>
+            <div class="nav-child" :class="{'min-width': spanLeft < 5}">
+              <ul>
+                <li>3子栏目1</li>
+                <li>3子栏目2</li>
+                <li>3子栏目3</li>
+              </ul>
+            </div>
           </Submenu>
           <Submenu name="2">
             <template slot="title">
