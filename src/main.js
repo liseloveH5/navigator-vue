@@ -4,11 +4,39 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-import iview from 'iview'
-import 'iview/dist/styles/iview.css';
-Vue.use(iview);
-
 Vue.config.productionTip = false
+
+
+// 引用第三方UI框架
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI);
+
+
+
+// 引用过滤器
+import * as filters from '@/services/filter'
+// register global utility filters.
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+
+
+// 绑定全局对象Util
+import Util from '@/services/Util.js'
+window.util = new Util();
+
+
+
+// 引用自己全局组建 components
+import * as components from '@/components'
+for (let plugin in components) {
+  let currentPlugin = components[plugin];
+  Vue.component(currentPlugin.name, currentPlugin)
+}
+
+
+
 
 /* eslint-disable no-new */
 new Vue({
