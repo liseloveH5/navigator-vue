@@ -1,7 +1,7 @@
-# navigator
+# vueweb
 
 > A Vue.js project
-项目是基于vue2.0 + vue-router + iview 框架搭建
+项目是基于vue2.0 + vue-router + elementUI 框架搭建
 
 ## Build Setup
 
